@@ -8,7 +8,7 @@
             "email": "Maras0830@gmail.com"
         }
     ],
-    "minimum-stability": "master",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "Maras0830\\TwitchApi\\": "src"
