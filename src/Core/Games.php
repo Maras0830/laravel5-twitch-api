@@ -1,0 +1,1 @@
+<?phpnamespace Maras0830\TwitchApi\Core;/** * Class Games * @package Maras0830\TwitchApi\Core */class Games extends Base{    /**     * Get games by number of viewers.     *     * @return mixed     */    public function topGames()    {        $response = $this->client->get('/kraken/games/top');        return $response->json();    }}
