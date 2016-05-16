@@ -2,7 +2,7 @@
 
 | Method | Name | Description |
 | ---- | ---- | --------------- |
-| Get | [blocks($user, $token = null)   ](https://github.com/Maras0830/laravel5-twitch-api/blob/master/doc/Blocks.md#blocksuser-options-token--null) | Get user's block list |
+| Get | [blocks($user, $token = null)   ](https://github.com/Maras0830/laravel5-twitch-api/blob/master/doc/Blocks.md#blocksuser-token--null) | Get user's block list |
 | Put | [putBlock($user, $target, $token = null)](https://github.com/Maras0830/laravel5-twitch-api/blob/master/doc/Blocks.md#putblockuser-target-token--null) | Add target to user's block list
 | Delete | [deleteBlock($user, $target, $token = null)](https://github.com/Maras0830/laravel5-twitch-api/blob/master/doc/Blocks.md#deleteblockuser-target-token--null) | Delete target from user's block list
 
