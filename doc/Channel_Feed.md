@@ -2,14 +2,14 @@
 
 | Method | Name | Description |
 | ---- | ---- | --------------- |
-| Get | posts($channel, $options, $token = null) | Get channel feed posts
-| Put | putPost($channel, $options, $token = null) | Create post
-| Get | post($channel, $post_id, $token = null) | Get post
-| Delete | removePost($channel, $post_id, $token = null) | Delete post
-| Put | postPostReaction($channel, $post_id, $options , $token = null) | Create reaction to post
-| Delete | removePostReaction($channel, $post_id, $options , $token = null)| Delete reaction
+| Get | [getChannelPosts](https://github.com/Maras0830/laravel5-twitch-api/blob/master/doc/Channel_Feed.md#getChannelPostshannel-options-token--null) | Get channel feed posts
+| Put | [putChannelPost](https://github.com/Maras0830/laravel5-twitch-api/blob/master/doc/Channel_Feed.md#putChannelPostchannel-options-token--null) | Create post
+| Get | [getChannelPost](https://github.com/Maras0830/laravel5-twitch-api/blob/master/doc/Channel_Feed.md#getChannelPostchannel-post_id-token--null) | Get post
+| Delete | [removeChannelPost](https://github.com/Maras0830/laravel5-twitch-api/blob/master/doc/Channel_Feed.md#removeChannelPostchannel-post_id-token--null) | Delete post
+| Put | [putChannelPostReaction](https://github.com/Maras0830/laravel5-twitch-api/blob/master/doc/Channel_Feed.md#putChannelPostReactionchannel-post_id-options-token--null) | Create reaction to post
+| Delete | [removeChannelPostReaction](https://github.com/Maras0830/laravel5-twitch-api/blob/master/doc/Channel_Feed.md#removeChannelPostReactionchannel-post_id-options-token--null)| Delete reaction
 
-## posts($channel, $options, $token = null)  
+## getChannelPosts($channel, $options, $token = null)  
 *__Authenticated__*, required scope: `channel_feed_read`    
 
 | Name | Required? | Type | Description
@@ -52,7 +52,7 @@ cursor | optional | string | Cursor value to begin next page
 }
 ```
 
-## putPost($channel, $options, $token = null)
+## putChannelPost($channel, $options, $token = null)
 *__Authenticated__*, required scope: `channel_feed_edit`
 
 ### Example Response
@@ -84,7 +84,7 @@ cursor | optional | string | Cursor value to begin next page
 }
 ```
 
-### post($channel, $post_id, $token = null)
+### getChannelPost($channel, $post_id, $token = null)
 *__Authenticated__*, optional scope: `channel_feed_read`
 
 ### Example Response
@@ -117,10 +117,10 @@ cursor | optional | string | Cursor value to begin next page
   }
 }
 ```
-### removePost($channel, $post_id, $token = null)
+### removeChannelPost($channel, $post_id, $token = null)
 *__Authenticated__*, required scope: `channel_feed_edit`
 
-## postPostReaction($channel, $post_id, $options , $token = null)
+## putChannelPostReaction($channel, $post_id, $options , $token = null)
 *__Authenticated__*, required scope: `channel_feed_edit`
 
 | Name | Required? | Type | Description

@@ -2,11 +2,11 @@
 
 | Method | Name | Description |
 | ---- | ---- | --------------- |
-| Get | getBlocksList | Get user's block list |
-| Put | putBlockList | Add target to user's block list
-| Delete | deleteBlock |Delete target from user's block list
+| Get | [blocks($user, $token = null)   ](https://github.com/Maras0830/laravel5-twitch-api/blob/master/doc/Blocks.md#blocksuser-options-token--null) | Get user's block list |
+| Put | [putBlock($user, $target, $token = null)](https://github.com/Maras0830/laravel5-twitch-api/blob/master/doc/Blocks.md#putblockuser-target-token--null) | Add target to user's block list
+| Delete | [deleteBlock($user, $target, $token = null)](https://github.com/Maras0830/laravel5-twitch-api/blob/master/doc/Blocks.md#deleteblockuser-target-token--null) | Delete target from user's block list
 
-## getBlocksList($user, $token = null)   
+## blocks($user, $token = null)   
 *__Authenticated__*, required scope: `user_blocks_read`    
 
 | Name | Required? | Type | Description
@@ -47,7 +47,7 @@ offset | optional | integer | Object offset for pagination. Default is 0.
 }
 ```
 
-## putBlockList($user, $target, $token = null)
+## putBlock($user, $target, $token = null)
 *__Authenticated__*, required scope: `user_blocks_edit` 
 
 ### Example Response
@@ -72,6 +72,8 @@ offset | optional | integer | Object offset for pagination. Default is 0.
   },
   "_id": 287813
 }
+```
+
 ### deleteBlock($user, $target, $token = null)
 *__Authenticated__*, required scope: `user_blocks_edit` 
 
