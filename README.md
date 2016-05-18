@@ -12,7 +12,7 @@ See official documentation [Twitch restful api link](https://github.com/justintv
 將 package 加入 ```composer.json```  
 Require the package in composer.json : 
 ```bash
-"maras/laravel5-twitch-api": "dev-master"
+"maras0830/laravel5-twitch-api": "dev-master"
 ```
 在 ``config/app.php``` 加入 providers  
 In ```config/app.php``` add ```providers```
