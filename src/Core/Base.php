@@ -30,7 +30,7 @@ class Base
 
 
         $this->client = new Client([
-            'api_url' => config('twitch-api.api_url'),
+            'base_url' => config('twitch-api.api_url'),
             'defaults' => [
                 'headers' => ['Accept' => 'application/vnd.twitchtv[v3]+json']
             ]
