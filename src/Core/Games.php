@@ -13,7 +13,7 @@ class Games extends Base
      *
      * @return mixed
      */
-    public function topGames()
+    public function topGames($options = [])
     {
         $availableOptions = ['limit', 'offset'];
         
