@@ -18,7 +18,11 @@ class Channels extends Base
      */
     public function channel($channel)
     {
-        $channel = $this->client->get('/kraken/channels/' . $channel);
+        try {
+            $channel = $this->client->get('/kraken/channels/' . $channel);
+        } catch (\Exception $e) {
+            return null;
+        }
 
         return $channel->json();
     }
