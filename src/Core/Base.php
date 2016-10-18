@@ -86,7 +86,8 @@ class Base
     {
         $headers = [
             'headers' => [
-                'Accept' => 'application/vnd.twitchtv.v3+json'
+                'Accept' => 'application/vnd.twitchtv.v3+json',
+                'Client-ID' => config('twitch-api.twitch_client_id')
             ]
         ];
 
