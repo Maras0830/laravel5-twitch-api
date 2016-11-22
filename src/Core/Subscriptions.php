@@ -45,7 +45,8 @@ class Subscriptions extends Base
             $response = $this->client->get('/kraken/channels/' . $channel . '/subscriptions', $parameters);
             return $response->json();
         } catch (\Exception $e) {
-            return $e->getCode();
+            return null;
+            //return $e->getCode();
         }
     }
 
