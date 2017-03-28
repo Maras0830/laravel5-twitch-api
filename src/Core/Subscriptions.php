@@ -42,8 +42,8 @@ class Subscriptions extends Base
         $parameters[ 'query' ] = $query;
 
         try {
-            $response = $this->client->get('/kraken/channels/' . $channel . '/subscriptions', $parameters);
-            return $response->json();
+            $response = $this->client->request('GET', '/kraken/channels/' . $channel . '/subscriptions', $parameters);
+            return json_decode($response->getBody()->getContents());
         } catch (\Exception $e) {
             return null;
             //return $e->getCode();
@@ -66,9 +66,9 @@ class Subscriptions extends Base
 
         $parameters = $this->getDefaultHeaders($token);
 
-        $response = $this->client->get('/channels/' . $channel . '/subscriptions/' . $user, $parameters);
+        $response = $this->client->request('GET', '/channels/' . $channel . '/subscriptions/' . $user, $parameters);
 
-        return $response->json();
+        return json_decode($response->getBody()->getContents());
     }
 
     /**
@@ -87,9 +87,9 @@ class Subscriptions extends Base
 
         $parameters = $this->getDefaultHeaders($token);
 
-        $response = $this->client->get('/users/' . $user . '/subscriptions/' . $channel, $parameters);
+        $response = $this->client->request('GET', '/users/' . $user . '/subscriptions/' . $channel, $parameters);
 
-        return $response->json();
+        return json_decode($response->getBody()->getContents());
     }
 
 }

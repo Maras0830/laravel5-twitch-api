@@ -27,8 +27,8 @@ class Games extends Base
         
         $parameters = $this->getDefaultHeaders();
         $parameters[ 'query' ] = $query;
-        $response = $this->client->get('/kraken/games/top', $parameters);
+        $response = $this->client->request('GET', '/kraken/games/top', $parameters);
 
-        return $response->json();
+        return json_decode($response->getBody()->getContents());
     }
 }
