@@ -9,12 +9,13 @@
         }
     ],
     "minimum-stability": "stable",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Maras0830\\TwitchApi\\": "src"
         }
     },
     "require": {
-        "guzzlehttp/guzzle": "6.0.2"
+        "guzzlehttp/guzzle": "~6.0"
     }
 }
