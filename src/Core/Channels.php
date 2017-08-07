@@ -26,7 +26,7 @@ class Channels extends Base
             return null;
         }
 
-        return $channel->json();
+        return json_decode($channel->getBody()->getContents());
     }
 
     /**
@@ -58,7 +58,7 @@ class Channels extends Base
     {
         $channel = $this->client->request('GET', '/kraken/channels/' . $channel . '/teams');
 
-        return $channel->json();
+        return json_decode($channel->getBody()->getContents());
     }
 
     /**
