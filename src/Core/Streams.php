@@ -21,7 +21,7 @@ class Streams extends Base
       
         $response = $this->client->request('GET', '/kraken/streams/' . $channel, $parameters);
 
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -46,7 +46,7 @@ class Streams extends Base
 
         $response = $this->client->request('GET', '/kraken/streams/', ['query' => $query]);
 
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -71,7 +71,7 @@ class Streams extends Base
 
         $response = $this->client->request('GET', '/kraken/streams/featured', ['query' => $query]);
 
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -96,6 +96,6 @@ class Streams extends Base
 
         $response = $this->client->request('GET', '/kraken/streams/summary', ['query' => $query]);
 
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody()->getContents(), true);
     }
 }

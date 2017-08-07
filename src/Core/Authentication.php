@@ -41,7 +41,7 @@ class Authentication extends Base
 
             $response = $client->request('POST', config('twitch-api.api_url') . '/kraken/oauth2/token', ['form_params' => $parameters]);
 
-            $response = json_decode($response->getBody()->getContents());
+            $response = json_decode($response->getBody()->getContents(), true);
 
             if (isset($response->access_token))
                 return $response->access_token;

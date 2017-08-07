@@ -44,7 +44,7 @@ class Channels extends Base
 
         $response = $this->client->request('GET', '/kraken/channel', $parameters);
 
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody()->getContents(), true);
     }
 
 
@@ -91,7 +91,7 @@ class Channels extends Base
 
         $response = $this->client->put('/kraken/channels/' . $channel, $parameters);
 
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -110,7 +110,7 @@ class Channels extends Base
 
         $response = $this->client->delete('/kraken/channels/' . $channel. '/stream_key', $parameters);
 
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -131,7 +131,7 @@ class Channels extends Base
 
         $response = $this->client->post('/channels/' . $channel . '/commercial', $parameters);
 
-        json_decode($response->getBody()->getContents());
+        json_decode($response->getBody()->getContents(), true);
     }
 
 }

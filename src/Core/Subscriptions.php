@@ -43,7 +43,7 @@ class Subscriptions extends Base
 
         try {
             $response = $this->client->request('GET', '/kraken/channels/' . $channel . '/subscriptions', $parameters);
-            return json_decode($response->getBody()->getContents());
+            return json_decode($response->getBody()->getContents(), true);
         } catch (\Exception $e) {
             return null;
             //return $e->getCode();
@@ -68,7 +68,7 @@ class Subscriptions extends Base
 
         $response = $this->client->request('GET', '/channels/' . $channel . '/subscriptions/' . $user, $parameters);
 
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -89,7 +89,7 @@ class Subscriptions extends Base
 
         $response = $this->client->request('GET', '/users/' . $user . '/subscriptions/' . $channel, $parameters);
 
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody()->getContents(), true);
     }
 
 }
