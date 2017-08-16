@@ -64,12 +64,14 @@ class Streams extends Base
         foreach ($defaultOptions as $option) {
 
             if (isset($options[ $option ])) {
-
                 $query[ $option ] = $options[ $option ];
             }
         }
 
-        $response = $this->client->request('GET', '/kraken/streams/featured', ['query' => $query]);
+        $parameters = $this->getDefaultHeaders();
+        $parameters[ 'query' ] = $query;
+
+        $response = $this->client->request('GET', '/kraken/streams/featured', $parameters);
 
         return json_decode($response->getBody()->getContents(), true);
     }
