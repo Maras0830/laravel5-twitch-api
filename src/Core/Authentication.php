@@ -43,8 +43,8 @@ class Authentication extends Base
 
             $response = json_decode($response->getBody()->getContents(), true);
 
-            if (isset($response->access_token))
-                return $response->access_token;
+            if (isset($response['access_token']))
+                return $response['access_token'];
 
         } catch (\Exception $e) {
 
